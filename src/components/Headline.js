@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
 class Headline extends Component {
     constructor(props) {
@@ -8,11 +9,6 @@ class Headline extends Component {
     }
     render() {
         const { header, desc } = this.props
-        if(!header) {
-            return (
-              <div></div>
-            );
-        }
         return (
             <div data-test="headline">
                 <h1 data-test="header">
@@ -25,4 +21,8 @@ class Headline extends Component {
         );
     }
 }
+Headline.propTypes = {
+    header: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired
+};
 export default Headline;
