@@ -14,7 +14,7 @@ class App extends Component {
       emitEvent: this.props.indexPosts
     }
     return (
-      <div className="App">
+      <div className="App" data-test="App">
         <Header />
         <section className="main">
           <Headline header="Posts" desc="Click the button to render posts" />
@@ -28,7 +28,7 @@ class App extends Component {
                   desc: body
                 }
                 return (
-                  <ListPosts {...configListPost}/>
+                  <ListPosts key={index} {...configListPost}/>
                 )
               })}
             </div>
